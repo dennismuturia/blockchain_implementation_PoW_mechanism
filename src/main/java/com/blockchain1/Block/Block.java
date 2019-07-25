@@ -1,13 +1,15 @@
 package com.blockchain1.Block;
 
+import com.blockchain1.Encryption.Encryption;
+
 import java.util.Date;
 
 public class Block{
-    public long timestamp;
-    public int index;
-    public String data;
-    public String prev_hash;
-    public String hash;
+    private long timestamp;
+    private int index;
+    private String data;
+    private String prev_hash;
+    private String hash;
 
     //Constructor for the block class
     public Block(int index, String data, String prev_hash){
@@ -16,5 +18,9 @@ public class Block{
         this.timestamp = new Date().getTime();
         this.prev_hash = prev_hash;
         this.hash = getHash();//To be done in a few
+    }
+
+    private String getHash(){
+        return Encryption.sha256(this.index + this.timestamp + this.data + this.prev_hash);
     }
 }
