@@ -6,10 +6,10 @@ import java.util.Date;
 
 public class Block{
     private long timestamp;
-    private int index;
-    private String data;
-    private String prev_hash;
-    private String hash;
+    public int index;
+    public String data;
+    public String prev_hash;
+    public String hash;
 
     //Constructor for the block class
     public Block(int index, String data, String prev_hash){

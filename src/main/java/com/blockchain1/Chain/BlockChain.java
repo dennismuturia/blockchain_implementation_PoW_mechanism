@@ -11,6 +11,11 @@ public class BlockChain {
 
     //Create the first block called the genesis block]
     public static Block createGenesisBlock(){
-        return new Block(0, "\"Note that this is the beginning of the block\"", "0");
+        return new Block(0, "\"Note that this is the beginning of the block 👌\"", "0");
+    }
+
+    //Repeatedly Generate a new block based on the latest block
+    public static Block createNextBlock(Block prevBlock){
+        return new Block(prevBlock.index +1, data.toString(), prevBlock.hash);
     }
 }
