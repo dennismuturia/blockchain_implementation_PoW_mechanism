@@ -1,13 +1,14 @@
 package com.blockchain1.Chain;
 
 import com.blockchain1.Block.Block;
+import com.blockchain1.Transaction.Transaction;
 
 import java.util.ArrayList;
 
 public class BlockChain {
     //Th e blockchain is implemented as an arraylist of blocks
     public static ArrayList<Block> blockChain = new ArrayList<>();
-    public static ArrayList<String> data = new ArrayList<>();
+    public static ArrayList<Transaction> transactions = new ArrayList<>();
 
     //Create the first block called the genesis block]
     public static Block createGenesisBlock(){
@@ -16,7 +17,7 @@ public class BlockChain {
 
     //Repeatedly Generate a new block based on the latest block
     public static Block createNextBlock(Block prevBlock){
-        return new Block(prevBlock.index +1, data.toString(), prevBlock.hash);
+        return new Block(prevBlock.index +1, transactions.toString(), prevBlock.hash);
     }
 
     public static void printChain(){
