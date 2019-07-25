@@ -18,4 +18,10 @@ public class BlockChain {
     public static Block createNextBlock(Block prevBlock){
         return new Block(prevBlock.index +1, data.toString(), prevBlock.hash);
     }
+
+    public static void printChain(){
+        for (int i = 0; i <blockChain.size() ; i++) {
+            System.out.println(blockChain.get(i));
+        }
+    }
 }

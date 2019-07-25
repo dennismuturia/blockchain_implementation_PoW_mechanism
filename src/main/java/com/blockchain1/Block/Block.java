@@ -23,4 +23,11 @@ public class Block{
     private String getHash(){
         return Encryption.sha256(this.index + this.timestamp + this.data + this.prev_hash);
     }
+
+    //Override the toString method
+    @Override
+    public String toString(){
+        return ("Block #" + this.index + "\n\ttimed-at: " + this.timestamp +
+                " \n\t Data: " + this.data + "\n\tHash: {" + this.hash + "}\n");
+    }
 }
