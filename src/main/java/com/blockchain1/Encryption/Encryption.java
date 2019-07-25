@@ -15,12 +15,12 @@ public class Encryption {
         assert digest != null;
         byte[] byteHash = digest.digest(origin.getBytes(StandardCharsets.UTF_8));
 
-        StringBuffer hexHash = new StringBuffer();
+        StringBuilder hexHash = new StringBuilder();
 
-        for (int i = 0; i <byteHash.length ; i++) {
-            String hexDigit = Integer.toHexString(0xff & byteHash[i]);
+        for (byte hash : byteHash) {
+            String hexDigit = Integer.toHexString(0xff & hash);
 
-            if (hexDigit.length() == 1){
+            if (hexDigit.length() == 1) {
                 hexHash.append('0');
             }
             hexHash.append(hexDigit);
